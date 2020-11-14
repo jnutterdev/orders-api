@@ -1,13 +1,13 @@
 const express = require('express');
 const app = express();
-const bodyparser = require('body-parser');
+// const bodyparser = require('body-parser');
 const port = 3001;
 
 let orders = [];
 let primaryId = 1;
 
-app.use(bodyparser.json());
-app.use(bodyparser.urlencoded({extended: false}));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 // routes
 app.post('/orders', (req, res) => {
@@ -35,7 +35,7 @@ app.get('/orders', (req, res) => {
 app.delete('/orders/:id', (req, res) => {
 
     const orderId = req.params.id;
-    
+
 })
 
 
